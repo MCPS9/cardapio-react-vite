@@ -1,4 +1,4 @@
-import './App.css'
+/*import './App.css'
 
 function App() {
   // Lista de objetos representando os itens do cardápio
@@ -60,5 +60,73 @@ const styles = {
     fontWeight: 'bold'
   }
 };
+
+export default App;*/
+
+// src/App.jsx
+/*import './App.css';
+import ItemCardapio from './ItemCardapio';
+
+function App() {
+  return (
+    <div className="container">
+      <h1 className="titulo">Cardápio Lanchonete</h1>
+      
+      <ItemCardapio nome="X-Burguer" preco={15.90} />
+      <ItemCardapio nome="X-Salada" preco={18.50} />
+      <ItemCardapio nome="Cachorro Quente" preco={12.00} />
+      <ItemCardapio nome="Misto Quente" preco={8.50} />
+      <ItemCardapio nome="Batata Frita G" preco={22.00} />
+    </div>
+  );
+}
+
+export default App;*/
+
+import { useState } from 'react';
+import './App.css';
+import ItemCardapio from './ItemCardapio';
+
+function App() {
+  const [totalItems, setTotalItems] = useState(0);
+
+  const handleAdicionar = () => {
+    setTotalItems(totalItems + 1);
+  };
+
+  return (
+    <div className="container">
+      <div className="carrinho-topo">
+        <h3>Total de itens no pedido: {totalItems}</h3>
+      </div>
+
+      <h1 className="titulo">Cardápio Lanchonete</h1>
+      
+      <ItemCardapio nome="X-Burguer" preco={15.90} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="X-Salada" preco={18.50} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Cachorro Quente" preco={12.00} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Misto Quente" preco={8.50} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Batata Frita G" preco={22.00} onAdicionar={handleAdicionar} />
+    </div>
+  );
+}
+
+return (
+    <div className="container">
+      <div className="carrinho-topo">
+        <h3>Total de itens no pedido: {totalItems}</h3>
+      </div>
+
+      <h1 className="titulo">Cardápio Lanchonete</h1>
+      
+      <ItemCardapio nome="X-Burguer" preco={15.90} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="X-Salada" preco={18.50} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Cachorro Quente" preco={12.00} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Misto Quente" preco={8.50} onAdicionar={handleAdicionar} />
+      <ItemCardapio nome="Batata Frita G" preco={22.00} onAdicionar={handleAdicionar} />
+    </div>
+  );
+
+
 
 export default App;
